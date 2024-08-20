@@ -18,9 +18,17 @@ pipeline{
                 ech 'sh quality gate'
             }
         }
-        stage('deploy-prod'){
+        stage('deploy'){
             steps{
-                echo 'sh deploy into production'
+                echo 'sh using terraform create env'
+                echo 'sh using kubectl to deploy'
+                echo 'sh run end to end system tests'
+            }
+        }
+        stage('test'){
+            steps{
+                echo 'run end to end system tests'
+                echo 'sh display test results'
             }
         }
     }
