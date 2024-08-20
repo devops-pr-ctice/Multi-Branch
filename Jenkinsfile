@@ -1,5 +1,8 @@
 pipeline{
     agent any
+    triggers{
+        pollSCM('* * * * *')
+    }
     stages{
         stage('SMC'){
             steps{
@@ -12,6 +15,7 @@ pipeline{
                 echo 'sh build code'
                 echo 'sh static code analysis'
                 echo 'archive package into jfrog'
+                ech 'sh quality gate'
             }
         }
         stage('deploy-prod'){
