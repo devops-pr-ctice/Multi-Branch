@@ -15,7 +15,7 @@ pipeline{
                 echo 'sh build code'
                 echo 'sh static code analysis'
                 echo 'archive package into jfrog'
-                ech 'sh quality gate'
+                echo 'sh quality gate'
             }
         }
         stage('deploy'){
